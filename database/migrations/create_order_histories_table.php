@@ -14,7 +14,7 @@ return new class extends Migration
     public function up()
     {
         Schema::create('order_histories', function (Blueprint $table) {
-            $table->id();
+            $table->uuid('uuid')->primary();
             $table->uuid('order_uuid');
             $table->foreign('order_uuid')->references('uuid')->on('orders')->onDelete('cascade');
             $table->string('status');

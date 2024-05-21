@@ -16,7 +16,7 @@ return new class extends Migration
         Schema::create('cart', function (Blueprint $table) {
             $table->uuid('uuid')->primary();
             $table->uuid('product_uuid');
-            $table->foreign('product_uuid')->references('uuid')->on('products')->onDelete('cascade');
+            $table->foreign('uuid')->references('uuid')->on('products')->onDelete('cascade');
             $table->integer('quantity');
             $table->decimal('price', 10, 2);
             $table->decimal('discount', 10, 2);

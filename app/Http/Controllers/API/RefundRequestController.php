@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Controllers\Api;
+namespace App\Http\Controllers\API;
 
 use App\Http\Controllers\Controller;
 use App\Models\RefundRequest;
@@ -12,7 +12,13 @@ class RefundRequestController extends Controller
     public function index()
     {
         $refundRequests = RefundRequest::all();
-        return response()->json($refundRequests);
+        return response()->json(['data' => $refundRequests], 200);
+    }
+
+    public function show($uuid)
+    {
+        $refundRequest = RefundRequest::findOrFail($uuid);
+        return response()->json(['data' => $refundRequest], 200);
     }
 
     public function store(Request $request)
@@ -21,43 +27,43 @@ class RefundRequestController extends Controller
             'user_uuid' => 'required|uuid',
             'order_uuid' => 'required|uuid',
             'reason' => 'required|string',
+            'status' => 'required|string'
         ]);
 
         if ($validator->fails()) {
-            return response()->json($validator->errors(), 400);
+            return response()->json(['errors' => $validator->errors()], 422);
         }
 
-        $refundRequest = RefundRequest::create($request->all());
-        return response()->json($refundRequest, 201);
-    }
+        $refundRequest = RefundRequest::create($validator->validated());
 
-    public function show($uuid)
-    {
-        $refundRequest = RefundRequest::where('uuid', $uuid)->firstOrFail();
-        return response()->json($refundRequest);
+        return response()->json(['message' => 'Refund request created successfully', 'data' => $refundRequest], 201);
     }
 
     public function update(Request $request, $uuid)
     {
-        $refundRequest = RefundRequest::where('uuid', $uuid)->firstOrFail();
+        $refundRequest = RefundRequest::findOrFail($uuid);
 
         $validator = Validator::make($request->all(), [
-            'reason' => 'sometimes|required|string',
-            'status' => 'sometimes|required|in:pending,approved,rejected',
+            'user_uuid' => 'uuid',
+            'order_uuid' => 'uuid',
+            'reason' => 'string',
+            'status' => 'string'
         ]);
 
         if ($validator->fails()) {
-            return response()->json($validator->errors(), 400);
+            return response()->json(['errors' => $validator->errors()], 422);
         }
 
-        $refundRequest->update($request->all());
-        return response()->json($refundRequest);
+        $refundRequest->update($validator->validated());
+
+        return response()->json(['message' => 'Refund request updated successfully', 'data' => $refundRequest], 200);
     }
 
     public function destroy($uuid)
     {
-        $refundRequest = RefundRequest::where('uuid', $uuid)->firstOrFail();
+        $refundRequest = RefundRequest::findOrFail($uuid);
         $refundRequest->delete();
-        return response()->json(null, 204);
+
+        return response()->json(['message' => 'Refund request deleted successfully'], 200);
     }
 }

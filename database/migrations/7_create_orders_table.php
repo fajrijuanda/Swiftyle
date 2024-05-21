@@ -13,14 +13,18 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('transactions', function (Blueprint $table) {
-            $table->id();
-            $table->unsignedBigInteger('user_uuid');
+        Schema::create('orders', function (Blueprint $table) {
+            $table->uuid()->primary();
+            $table->uuid('user_uuid');
             $table->foreign('user_uuid')->references('uuid')->on('users');
-            $table->unsignedBigInteger('product_uuid')->nullable();
+            $table->uuid('product_uuid');
             $table->foreign('product_uuid')->references('uuid')->on('products');
-            $table->decimal('amount', 10, 2);
-            $table->enum('type', ['purchase', 'refund', 'payment', 'withdrawal']);
+            $table->integer('quantity');
+            $table->integer('total');
+            $table->uuid('address_uuid');
+            $table->foreign('address_uuid')->references('uuid')->on('addresses');
+            $table->uuid('user_payment_uuid');
+            $table->foreign('user_payment_uuid')->references('uuid')->on('user_payments');
             $table->string('status');
             $table->timestamps();
         });
@@ -33,6 +37,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('transactions');
+        Schema::dropIfExists('order');
     }
 };

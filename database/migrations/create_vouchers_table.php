@@ -14,7 +14,7 @@ return new class extends Migration
     public function up()
     {
         Schema::create('vouchers', function (Blueprint $table) {
-            $table->uuid('uuid');
+            $table->uuid('uuid')->primary();
             $table->string('code')->unique();
             $table->enum('type', ['percentage_discount', 'fixed_discount'])->default('percentage_discount');
             $table->decimal('discount_amount', 10, 2);

@@ -7,6 +7,7 @@ use App\Http\Controllers\API\UsersController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\API\AuthenticationController;
+use App\Http\Controllers\Api\ChatController;
 use App\Http\Controllers\API\OrdersController;
 use App\Http\Controllers\API\WishlistController;
 
@@ -30,7 +31,9 @@ Route::apiResource('categories', CategoriesController::class);
 Route::apiResource('cart', CartController::class);
 Route::apiResource('users', UsersController::class);
 Route::apiResource('products', ProductsController::class);
-
+Route::apiResource('chats', ChatController::class);
+Route::apiResource('orders', OrdersController::class);
+Route::apiResource('wishlist', WishlistController::class);
 
 Route::post('register', [AuthenticationController::class, 'register']);
 Route::post('login', [AuthenticationController::class, 'login']);

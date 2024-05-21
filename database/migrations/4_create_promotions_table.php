@@ -9,7 +9,7 @@ return new class extends Migration
     public function up()
     {
         Schema::create('promotions', function (Blueprint $table) {
-            $table->id();
+            $table->uuid('uuid')->primary();
             $table->string('name');
             $table->text('description')->nullable();
             $table->enum('type', ['percentage_discount', 'fixed_discount', 'buy_one_get_one'])->default('percentage_discount');
@@ -18,10 +18,6 @@ return new class extends Migration
             $table->date('start_date');
             $table->date('end_date');
             $table->timestamps();
-        });
-
-        Schema::table('promotions', function (Blueprint $table) {
-            $table->foreignId('catalog_id')->nullable()->constrained('catalogs')->onDelete('cascade');
         });
     }
 

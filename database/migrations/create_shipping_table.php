@@ -14,7 +14,17 @@ return new class extends Migration
     public function up()
     {
         Schema::create('shipping', function (Blueprint $table) {
-            $table->id();
+            $table->uuid('uuid')->primary();
+            $table->uuid('order_uuid');
+            $table->foreign('order_uuid')->references('uuid')->on('orders')->onDelete('cascade');
+            $table->string('address');
+            $table->string('city');
+            $table->string('state');
+            $table->string('postal_code');
+            $table->string('country');
+            $table->string('shipping_method');
+            $table->decimal('shipping_cost', 10, 2);
+            $table->enum('status', ['pending', 'shipped', 'delivered', 'cancelled'])->default('pending');
             $table->timestamps();
         });
     }

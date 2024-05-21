@@ -16,8 +16,8 @@ return new class extends Migration
         Schema::create('reviews', function (Blueprint $table) {
             $table->uuid('uuid')->primary();
             $table->uuid('user_uuid');
-            $table->uuid('product_uuid');
             $table->foreign('user_uuid')->references('uuid')->on('users')->onDelete('cascade');
+            $table->uuid('product_uuid');
             $table->foreign('product_uuid')->references('uuid')->on('products')->onDelete('cascade');
             $table->text('content');
             $table->integer('rating')->default(0);

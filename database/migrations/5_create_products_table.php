@@ -20,10 +20,10 @@ return new class extends Migration
             $table->integer('price');
             $table->string('image');
             $table->uuid('category_uuid');
-            $table->foreign('category_uuid')->references('uuid')->on('categories')->onDelete('cascade');
+            $table->foreign('category_uuid')->references('uuid')->on('categories')->onDelete('cascade'); // Corrected foreign key
             $table->integer('stock');
-            $table->unsignedBigInteger('promotions_uuid');
-            $table->foreign('promotions_uuid')->references('uuid')->on('promotions')->onDelete('cascade');
+            $table->uuid('promotions_uuid');
+            $table->foreign('promotions_uuid')->references('uuid')->on('promotions')->onDelete('cascade'); // Corrected foreign key
             $table->timestamps();
         });
     }

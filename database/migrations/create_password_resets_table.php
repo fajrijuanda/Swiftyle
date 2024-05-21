@@ -14,9 +14,15 @@ return new class extends Migration
     public function up()
     {
         Schema::create('password_resets', function (Blueprint $table) {
-            $table->string('email')->index();
-            $table->string('token');
+            $table->string('phone')->nullable()->index();
+            $table->string('email')->nullable()->index();
+            $table->string('otp_code')->nullable();
+            $table->timestamp('otp_expiry')->nullable();
+            $table->string('email_token', 6)->nullable();
+            $table->timestamp('email_token_expiry')->nullable();
             $table->timestamp('created_at')->nullable();
+
+            $table->primary(['phone', 'email']);
         });
     }
 
@@ -30,3 +36,4 @@ return new class extends Migration
         Schema::dropIfExists('password_resets');
     }
 };
+

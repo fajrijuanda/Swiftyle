@@ -5,7 +5,6 @@ namespace App\Models;
 use App\Helpers\UuidHelper;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
-use Ramsey\Uuid\Uuid;
 
 class Review extends Model
 {
