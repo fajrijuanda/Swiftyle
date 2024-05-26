@@ -7,6 +7,36 @@
 <a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
 </p>
 
+## About Swiftyle
+
+Swiftyle is a fashion recommendation web application designed to provide users with personalized fashion suggestions based on their preferences and style. Built with the elegant Laravel framework, Swiftyle ensures a seamless and enjoyable user experience. The development of Swiftyle has been driven by the goal of making fashion discovery and shopping an effortless and delightful process.
+
+## Features
+
+- Personalized fashion recommendations
+- User preferences for style and genre
+- Product categorization and filtering
+- Wishlist and cart management
+- Secure payment processing
+- Order and shipping tracking
+- User reviews and ratings
+- Customer support and complaint management
+
+## Members of the 7th Team
+
+Swiftyle is developed by a dedicated team of six members:
+
+1. Fajri Yanuar Shiddiq Juanda
+2. Dzaky Jaisy Al-Qorney
+3. Ahmad Ludfi Ikhwana
+4. Devi Fitri Anggreyani
+5. Muhammad Fathi Farhat
+6. Indah Nirmala Sukmaningtyas
+
+## Learning Swiftle
+
+Swiftyle is built on the robust and versatile Laravel framework. Laravel offers extensive and thorough documentation and a rich library of video tutorials via Laracasts. These resources are invaluable for anyone looking to get started with Laravel or enhance their existing skills.
+
 ## About Laravel
 
 Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
