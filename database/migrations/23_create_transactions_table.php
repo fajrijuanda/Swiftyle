@@ -14,11 +14,11 @@ return new class extends Migration
     public function up()
     {
         Schema::create('transactions', function (Blueprint $table) {
-            $table->uuid()->primary();
-            $table->uuid('user_uuid');
-            $table->foreign('user_uuid')->references('uuid')->on('users');
-            $table->uuid('product_uuid');
-            $table->foreign('product_uuid')->references('uuid')->on('products');
+            $table->id();
+            $table->unsignedBigInteger('user_id');
+            $table->foreign('user_id')->references('id')->on('users');
+            $table->unsignedBigInteger('order_id');
+            $table->foreign('order_id')->references('id')->on('orders');
             $table->decimal('amount', 10, 2);
             $table->enum('type', ['purchase', 'refund', 'payment', 'withdrawal']);
             $table->string('status');

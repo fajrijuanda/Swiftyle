@@ -2,6 +2,8 @@
 
 namespace App\Providers;
 
+use App\Models\Product;
+use App\Observers\ProductObserver;
 use Illuminate\Support\ServiceProvider;
 use Illuminate\Support\Facades\View;
 
@@ -24,7 +26,9 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        $project_title = '| Viho - Premium Admin Template';
-        View::share('title', $project_title);   
+        $project_title = '| Swiftyle Project';
+        View::share('title', $project_title);
+        
+        Product::observe(ProductObserver::class);
     }
 }

@@ -9,8 +9,8 @@ return new class extends Migration
     public function up()
     {
         Schema::create('promotions', function (Blueprint $table) {
-            $table->uuid('uuid')->primary();
-            $table->string('name');
+            $table->id();
+            $table->string('name', 255);
             $table->text('description')->nullable();
             $table->enum('type', ['percentage_discount', 'fixed_discount', 'buy_one_get_one'])->default('percentage_discount');
             $table->decimal('discount_amount', 10, 2)->nullable();

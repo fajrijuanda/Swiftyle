@@ -14,11 +14,11 @@ return new class extends Migration
     public function up()
     {
         Schema::create('refund_requests', function (Blueprint $table) {
-            $table->uuid('uuid')->primary();
-            $table->uuid('user_uuid');
-            $table->foreign('user_uuid')->references('uuid')->on('users');
-            $table->uuid('order_uuid');
-            $table->foreign('order_uuid')->references('uuid')->on('orders');
+            $table->id();
+            $table->unsignedBigInteger('user_id');
+            $table->foreign('user_id')->references('id')->on('users');
+            $table->unsignedBigInteger('order_id');
+            $table->foreign('order_id')->references('id')->on('orders');
             $table->text('reason');
             $table->enum('status', ['pending', 'approved', 'rejected'])->default('pending');
             $table->timestamps();

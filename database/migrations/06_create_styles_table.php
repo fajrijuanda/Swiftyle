@@ -13,13 +13,10 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('complaints', function (Blueprint $table) {
-            $table->uuid('uuid')->primary();
-            $table->uuid('user_uuid');
-            $table->foreign('user_uuid')->references('uuid')->on('users');
-            $table->string('subject');
+        Schema::create('styles', function (Blueprint $table) {
+            $table->id();
+            $table->string('name', 255);
             $table->text('description');
-            $table->enum('status', ['pending', 'resolved', 'rejected'])->default('pending');
             $table->timestamps();
         });
     }
@@ -31,6 +28,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('complaints');
+        Schema::dropIfExists('styles');
     }
 };

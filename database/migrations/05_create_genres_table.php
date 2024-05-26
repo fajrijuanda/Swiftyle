@@ -13,12 +13,10 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('chats', function (Blueprint $table) {
-            $table->uuid('uuid')->primary();
-            $table->uuid('user1_uuid');
-            $table->foreign('user1_uuid')->references('uuid')->on('users')->onDelete('cascade');
-            $table->uuid('user2_uuid');
-            $table->foreign('user2_uuid')->references('uuid')->on('users')->onDelete('cascade');
+        Schema::create('genres', function (Blueprint $table) {
+            $table->id();
+            $table->string('name', 255);
+            $table->text('description');
             $table->timestamps();
         });
     }
@@ -30,6 +28,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('chats');
+        Schema::dropIfExists('genres');
     }
 };

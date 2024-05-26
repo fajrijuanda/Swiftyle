@@ -14,9 +14,9 @@ return new class extends Migration
     public function up()
     {
         Schema::create('password_resets', function (Blueprint $table) {
-            $table->string('phone')->nullable()->index();
-            $table->string('email')->nullable()->index();
-            $table->string('otp_code')->nullable();
+            $table->string('phone', 255)->nullable()->index();
+            $table->string('email', 255)->nullable()->index();
+            $table->string('otp_code', 255)->nullable();
             $table->timestamp('otp_expiry')->nullable();
             $table->string('email_token', 6)->nullable();
             $table->timestamp('email_token_expiry')->nullable();

@@ -14,13 +14,11 @@ return new class extends Migration
     public function up()
     {
         Schema::create('messages', function (Blueprint $table) {
-            $table->uuid('uuid')->primary();
-            $table->uuid('chat_uuid');
-            $table->foreign('chat_uuid')->references('uuid')->on('chats')->onDelete('cascade');
-            $table->uuid('sender_uuid');
-            $table->foreign('sender_uuid')->references('uuid')->on('users')->onDelete('cascade');
-            $table->text('message');
-            $table->enum('status', ['sent', 'delivered', 'read'])->default('sent');
+            $table->id();
+            $table->unsignedBigInteger('chat_id');
+            $table->foreign('chat_id')->references('id')->on('chats')->onDelete('cascade');
+            $table->text('content');
+            $table->timestamp('waktu');
             $table->timestamps();
         });
     }

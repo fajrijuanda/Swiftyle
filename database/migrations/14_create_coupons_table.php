@@ -13,8 +13,8 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('vouchers', function (Blueprint $table) {
-            $table->uuid('uuid')->primary();
+        Schema::create('coupons', function (Blueprint $table) {
+            $table->id();
             $table->string('code')->unique();
             $table->enum('type', ['percentage_discount', 'fixed_discount'])->default('percentage_discount');
             $table->decimal('discount_amount', 10, 2);
@@ -33,6 +33,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('vouchers');
+        Schema::dropIfExists('coupons');
     }
 };

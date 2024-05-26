@@ -13,12 +13,12 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('user_payments', function (Blueprint $table) {
-            $table->uuid('uuid')->primary();
-            $table->uuid('user_uuid');
-            $table->foreign('user_uuid')->references('uuid')->on('users')->onDelete('cascade');
-            $table->string('payment_method');
-            $table->string('payment_details')->nullable();
+        Schema::create('chats', function (Blueprint $table) {
+            $table->id();
+            $table->unsignedBigInteger('user1_id');
+            $table->foreign('user1_id')->references('id')->on('users')->onDelete('cascade');
+            $table->unsignedBigInteger('user2_id');
+            $table->foreign('user2_id')->references('id')->on('users')->onDelete('cascade');
             $table->timestamps();
         });
     }
@@ -30,6 +30,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('user_payments');
+        Schema::dropIfExists('chats');
     }
 };

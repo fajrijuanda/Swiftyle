@@ -13,12 +13,11 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('order_histories', function (Blueprint $table) {
-            $table->uuid('uuid')->primary();
-            $table->uuid('order_uuid');
-            $table->foreign('order_uuid')->references('uuid')->on('orders')->onDelete('cascade');
-            $table->string('status');
-            $table->text('description')->nullable();
+        Schema::create('wishlist', function (Blueprint $table) {
+            $table->id();
+            $table->unsignedBigInteger('user_id');
+            $table->foreign('user_id')->references('id')->on('users');
+            $table->string('name', 255);
             $table->timestamps();
         });
     }
@@ -30,6 +29,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('order_histories');
+        Schema::dropIfExists('wishlist');
     }
 };

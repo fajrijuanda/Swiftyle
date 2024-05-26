@@ -13,13 +13,12 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('checkouts', function (Blueprint $table) {
-            $table->uuid()->primary();
-            $table->uuid('order_uuid');
-            $table->foreign('order_uuid')->references('uuid')->on('orders');
-            $table->uuid('user_uuid');
-            $table->foreign('user_uuid')->references('uuid')->on('users');
-            $table->string('payment_method');
+        Schema::create('wishlist_item', function (Blueprint $table) {
+            $table->id();
+            $table->unsignedBigInteger('wishlist_id');
+            $table->foreign('wishlist_id')->references('id')->on('wishlist');
+            $table->unsignedBigInteger('product_id');
+            $table->foreign('product_id')->references('id')->on('products');
             $table->timestamps();
         });
     }
@@ -31,6 +30,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('checkouts');
+        Schema::dropIfExists('wishlist_item');
     }
 };
