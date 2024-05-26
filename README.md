@@ -33,7 +33,7 @@ Swiftyle is developed by a dedicated team of six members:
 5. Muhammad Fathi Farhat
 6. Indah Nirmala Sukmaningtyas
 
-## Learning Swiftle
+## Learning Swiftyle
 
 Swiftyle is built on the robust and versatile Laravel framework. Laravel offers extensive and thorough documentation and a rich library of video tutorials via Laracasts. These resources are invaluable for anyone looking to get started with Laravel or enhance their existing skills.
 
