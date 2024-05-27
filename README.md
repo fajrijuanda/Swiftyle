@@ -1,6 +1,6 @@
 <div style="display: flex; justify-content: space-between; flex-direction: row;">
   <div>
-    <p align="center"><a href="https://swiftyle.com" target="_blank"><img src="public/assets/images/logo/logo-readme.png" width="200"></a></p>
+    <p align="center"><a href="https://swiftyle.com" target="_blank"><img src="public/assets/images/logo/logo-readme.png" width="400"></a></p>
   <div>
     <p align="center">
       <a href="https://travis-ci.org/laravel/framework"><img src="https://travis-ci.org/laravel/framework.svg" alt="Build Status"></a>
