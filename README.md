@@ -1,8 +1,6 @@
 <div style="display: flex; justify-content: space-between; flex-direction: row;">
   <div>
-    <p align="center"><a href="https://swiftyle.com" target="_blank"><img src="public/assets/images/logo/logo.png" width="200"></a></p>
-    <p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="200"></a></p>
-  </div>
+    <p align="center"><a href="https://swiftyle.com" target="_blank"><img src="public/assets/images/logo/logo-readme.png" width="200"></a></p>
   <div>
     <p align="center">
       <a href="https://travis-ci.org/laravel/framework"><img src="https://travis-ci.org/laravel/framework.svg" alt="Build Status"></a>
