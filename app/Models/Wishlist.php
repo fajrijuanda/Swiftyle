@@ -12,30 +12,20 @@ class Wishlist extends Model
     use HasFactory;
 
     protected $fillable = [
-        'uuid',
-        'product_uuid',
-        'user_uuid',
+        'id',
+        'product_id',
+        'user_id',
         'name',
     ];
 
-    protected static function boot()
-    {
-        parent::boot();
-
-        static::creating(function ($model) {
-            if (empty($model->uuid)) {
-                $model->uuid = UuidHelper::generateUuid();
-            }
-        });
-    }
 
     public function product()
     {
-        return $this->belongsTo(Product::class, 'product_uuid', 'uuid');
+        return $this->belongsTo(Product::class, 'product_id', 'id');
     }
 
     public function user()
     {
-        return $this->belongsTo(User::class, 'user_uuid', 'uuid');
+        return $this->belongsTo(User::class, 'user_id', 'id');
     }
 }

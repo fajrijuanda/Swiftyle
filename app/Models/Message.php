@@ -10,26 +10,15 @@ class Message extends Model
 {
     use HasFactory;
 
-    protected $fillable = ['chat_uuid', 'sender_uuid', 'message', 'status'];
+    protected $fillable = ['chat_id', 'sender_id', 'message', 'status'];
 
     public function chat()
     {
-        return $this->belongsTo(Chat::class, 'chat_uuid', 'uuid');
+        return $this->belongsTo(Chat::class, 'chat_id', 'id');
     }
 
     public function sender()
     {
-        return $this->belongsTo(User::class, 'sender_uuid', 'uuid');
-    }
-
-    protected static function boot()
-    {
-        parent::boot();
-
-        static::creating(function ($model) {
-            if (empty($model->uuid)) {
-                $model->uuid = UuidHelper::generateUuid();
-            }
-        });
+        return $this->belongsTo(User::class, 'sender_id', 'id');
     }
 }

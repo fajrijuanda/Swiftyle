@@ -17,8 +17,8 @@
             <li class="breadcrumb-item">Widgets</li>
             <li class="breadcrumb-item active">General</li>
         @endcomponent
-        
-        <div class="container-fluid">
+        <div class="container-fluid">  
+            <img class="bg-img-cover bg-center" src="{{ asset('assets/images/login/sign-up.png') }}" />        
             <div class="row">
                 <div class="col-sm-6 col-xl-3 col-lg-6">
                     <div class="card o-hidden border-0">

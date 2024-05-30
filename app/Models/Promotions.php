@@ -10,11 +10,11 @@ class Promotion extends Model
 {
     use HasFactory;
 
-    protected $keyType = 'uuid';
+    protected $keyType = 'id';
     public $incrementing = false;
 
     protected $fillable = [
-        'uuid',
+        'id',
         'name',
         'description',
         'type',
@@ -45,19 +45,9 @@ class Promotion extends Model
      */
     public function products()
     {
-        return $this->belongsToMany(Product::class, 'promotion_product', 'promotion_uuid', 'product_uuid')
+        return $this->belongsToMany(Product::class, 'promotion_product', 'promotion_id', 'product_id')
             ->withPivot('discount_amount', 'discount_percentage')
             ->withTimestamps();
     }
 
-    protected static function boot()
-    {
-        parent::boot();
-
-        static::creating(function ($model) {
-            if (empty($model->uuid)) {
-                $model->uuid = UuidHelper::generateUuid();
-            }
-        });
-    }
 }

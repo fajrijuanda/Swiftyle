@@ -27,26 +27,21 @@
                     <li class="back-btn">
                         <div class="mobile-back text-end"><span>Back</span><i class="fa fa-angle-right ps-2" aria-hidden="true"></i></div>
                     </li>
-                    <li class="sidebar-main-title">
-                        <div>
-                            <h6>General</h6>
-                        </div>
+                    <li>
+                        <a href="{{route('index')}}" class="nav-link {{ prefixActive('/dashboard') }} {{routeActive('index')}}" href="javascript:void(0)"><i data-feather="home"></i><span>Dashboard</span></a>                  
+                        {{-- <ul class="nav-submenu menu-content" style="display: {{ prefixBlock('/dashboard') }};"> --}}
+                            {{-- <li><a  class=">Default</a></li> --}}
+                            {{-- <li><a href="{{route('dashboard-02')}}" class="{{routeActive('dashboard-02')}}">Ecommerce</a></li> --}}
+                        {{-- </ul> --}}
                     </li>
-                    <li class="dropdown">
-                        <a class="nav-link menu-title {{ prefixActive('/dashboard') }}" href="javascript:void(0)"><i data-feather="home"></i><span>Dashboard</span></a>                  
-                        <ul class="nav-submenu menu-content" style="display: {{ prefixBlock('/dashboard') }};">
-                            <li><a href="{{route('index')}}" class="{{routeActive('index')}}">Default</a></li>
-                            <li><a href="{{route('dashboard-02')}}" class="{{routeActive('dashboard-02')}}">Ecommerce</a></li>
-                        </ul>
-                    </li>
-                    <li class="dropdown">
+                    {{-- <li class="dropdown">
                         <a class="nav-link menu-title {{ prefixActive('/widgets') }}" href="javascript:void(0)"><i data-feather="airplay"></i><span>Widgets</span></a>
                         <ul class="nav-submenu menu-content"  style="display: {{ prefixBlock('/widgets') }};">
                             <li><a href="{{ route('general-widget') }}" class="{{routeActive('general-widget')}}">General</a></li>
                             <li><a href="{{ route('chart-widget') }}" class="{{routeActive('chart-widget')}}">Chart</a></li>
                         </ul>
-                    </li>
-                    <li class="sidebar-main-title">
+                    </li> --}}
+                    {{-- <li class="sidebar-main-title">
                         <div>
                             <h6>Components</h6>
                         </div>
@@ -81,8 +76,8 @@
                             <li><a href="{{ route('box-shadow') }}" class="{{routeActive('box-shadow')}}">Shadow</a></li>
                             <li><a href="{{ route('list') }}" class="{{routeActive('list')}}">Lists</a></li>
                         </ul>
-                    </li>
-                    <li class="dropdown">
+                    </li> --}}
+                    {{-- <li class="dropdown">
                         <a class="nav-link menu-title {{ prefixActive('/bonus-ui') }}" href="javascript:void(0)"><i data-feather="folder-plus"></i><span>Bonus Ui</span></a>
                         <ul class="nav-submenu menu-content" style="display: {{ prefixBlock('/bonus-ui') }};">
                             <li><a href="{{ route('scrollable') }}" class="{{routeActive('scrollable')}}">Scrollable</a></li>
@@ -115,8 +110,8 @@
                                 </ul>
                             </li>
                         </ul>
-                    </li>
-                    <li class="dropdown">
+                    </li> --}}
+                    {{-- <li class="dropdown">
                         <a class="nav-link menu-title {{ prefixActive('/builders') }}" href="javascript:void(0)"><i data-feather="edit-3"></i><span>Builders</span></a>
                         <ul class="nav-submenu menu-content" style="display: {{ prefixBlock('/builders') }};">
                             <li><a href="{{ route('form-builder-1') }}" class="{{routeActive('form-builder-1')}}">Form Builder 1</a></li>
@@ -124,8 +119,8 @@
                             <li><a href="{{ route('pagebuild') }}" class="{{routeActive('pagebuild')}}">Page Builder</a></li>
                             <li><a href="{{ route('button-builder') }}" class="{{routeActive('button-builder')}}">Button Builder</a></li>
                         </ul>
-                    </li>
-                    <li class="dropdown">
+                    </li> --}}
+                    {{-- <li class="dropdown">
                         <a class="nav-link menu-title {{ prefixActive('/animation') }}" href="javascript:void(0)"><i data-feather="cloud-drizzle"></i><span>Animation</span></a>
                         <ul class="nav-submenu menu-content" style="display: {{ prefixBlock('/animation') }};">
                             <li><a href="{{ route('animate') }}" class="{{routeActive('animate')}}">Animate</a></li>
@@ -134,7 +129,7 @@
                             <li><a href="{{ route('tilt') }}" class="{{routeActive('tilt')}}">Tilt Animation</a></li>
                             <li><a href="{{ route('wow') }}" class="{{routeActive('wow')}}">Wow Animation</a></li>
                         </ul>
-                    </li>
+                    </li> --}}
                     <li class="dropdown">
                         <a class="nav-link menu-title {{ prefixActive('/icons') }}" href="javascript:void(0)"><i data-feather="command"></i><span>Icons</span></a>
                         <ul class="nav-submenu menu-content" style="display: {{ prefixBlock('/icons') }};">
@@ -146,7 +141,7 @@
                             <li><a href="{{ route('whether-icon') }}" class="{{routeActive('whether-icon')}}">Whether Icon </a></li>
                         </ul>
                     </li>
-                    <li class="dropdown">
+                    {{-- <li class="dropdown">
                         <a class="nav-link menu-title {{ prefixActive('/buttons') }}" href="javascript:void(0)"><i data-feather="cloud"></i><span>Buttons</span></a>
                         <ul class="nav-submenu menu-content" style="display: {{ prefixBlock('/buttons') }};">
                             <li><a href="{{ route('buttons') }}" class="{{routeActive('buttons')}}">Default Style</a></li>
@@ -155,8 +150,8 @@
                             <li><a href="{{ route('raised-button') }}" class="{{routeActive('raised-button')}}">Raised Style</a></li>
                             <li><a href="{{ route('button-group') }}" class="{{routeActive('button-group')}}">Button Group</a></li>
                         </ul>
-                    </li>
-                    <li class="dropdown">
+                    </li> --}}
+                    {{-- <li class="dropdown">
                         <a class="nav-link menu-title {{ prefixActive('/charts') }}" href="javascript:void(0)"><i data-feather="bar-chart"></i><span>Charts</span></a>
                         <ul class="nav-submenu menu-content" style="display: {{ prefixBlock('/charts') }};">
                             <li><a href="{{ route('chart-apex') }}" class="{{routeActive('chart-apex')}}">Apex Chart</a></li>
@@ -169,13 +164,13 @@
                             <li><a href="{{ route('chartist') }}" class="{{routeActive('chartist')}}">Chartist Chart</a></li>
                             <li><a href="{{ route('chart-peity') }}" class="{{routeActive('chart-peity')}}">Peity Chart</a></li>
                         </ul>
-                    </li>
-                    <li class="sidebar-main-title">
+                    </li> --}}
+                    {{-- <li class="sidebar-main-title">
                         <div>
                             <h6>Forms</h6>
                         </div>
-                    </li>
-                    <li class="dropdown">
+                    </li> --}}
+                    {{-- <li class="dropdown">
                         <a class="nav-link menu-title {{ prefixActive('/form-controls') }}" href="javascript:void(0)"><i data-feather="sliders"></i><span>Form Controls </span></a>
                         <ul class="nav-submenu menu-content" style="display: {{ prefixBlock('/form-controls') }};">
                             <li><a href="{{ route('form-validation') }}" class="{{routeActive('form-validation')}}">Form Validation</a></li>
@@ -184,8 +179,8 @@
                             <li><a href="{{ route('input-group') }}" class="{{routeActive('input-group')}}">Input Groups</a></li>
                             <li><a href="{{ route('megaoptions') }}" class="{{routeActive('megaoptions')}}">Mega Options </a></li>
                         </ul>
-                    </li>
-                    <li class="dropdown">
+                    </li> --}}
+                    {{-- <li class="dropdown">
                         <a class="nav-link menu-title {{ prefixActive('/form-widgets') }}" href="javascript:void(0)"><i data-feather="package"></i><span>Form Widgets</span></a>
                         <ul class="nav-submenu menu-content" style="display: {{ prefixBlock('/form-widgets') }};">
                             <li><a href="{{ route('datepicker') }}" class="{{routeActive('datepicker')}}">Datepicker</a></li>
@@ -198,8 +193,8 @@
                             <li><a href="{{ route('typeahead') }}" class="{{routeActive('typeahead')}}">Typeahead</a></li>
                             <li><a href="{{ route('clipboard') }}" class="{{routeActive('clipboard')}}">Clipboard </a></li>
                         </ul>
-                    </li>
-                    <li class="dropdown">
+                    </li> --}}
+                    {{-- <li class="dropdown">
                         <a class="nav-link menu-title {{ prefixActive('/form-layout') }}" href="javascript:void(0)"><i data-feather="layout"></i><span>Form layout</span></a>
                         <ul class="nav-submenu menu-content" style="display: {{ prefixBlock('/form-layout') }};">
                             <li><a href="{{ route('default-form') }}" class="{{routeActive('default-form')}}">Default Forms</a></li>
@@ -207,7 +202,85 @@
                             <li><a href="{{ route('form-wizard-two') }}" class="{{routeActive('form-wizard-two')}}">Form Wizard 2</a></li>
                             <li><a href="{{ route('form-wizard-three') }}" class="{{routeActive('form-wizard-three')}}">Form Wizard 3</a></li>
                         </ul>
+                    </li> --}}
+
+                    <!-- Admin Panel -->
+                    <li class="sidebar-main-title">
+                        <div>
+                            <h6>Database User</h6>
+                        </div>
                     </li>
+                    <li>
+                        <a class="nav-link menu-title link-nav {{ routeActive('faq') }}" href="{{ route('faq') }}"><i data-feather="database"></i><span>Data User</span></a>
+                    </li>
+                    <li>
+                        <a class="nav-link menu-title link-nav {{ routeActive('faq') }}" href="{{ route('faq') }}"><i data-feather="database"></i><span>Data Order</span></a>
+                    </li>
+                    <li>
+                        <a class="nav-link menu-title link-nav {{ routeActive('faq') }}" href="{{ route('faq') }}"><i data-feather="database"></i><span>Complain User</span></a>
+                    </li>
+
+                    <!-- Seller Panel -->
+                    <li class="sidebar-main-title">
+                        <div>
+                            <h6>Database Seller</h6>
+                        </div>
+                    </li>
+                    <li>
+                        <a class="nav-link menu-title link-nav {{ routeActive('faq') }}" href="{{ route('faq') }}"><i data-feather="database"></i><span>Add Shop</span></a>
+                    </li>
+                    <li>
+                        <a class="nav-link menu-title link-nav {{ routeActive('faq') }}" href="{{ route('faq') }}"><i data-feather="database"></i><span>Data Order</span></a>
+                    </li>
+                    <li>
+                        <a class="nav-link menu-title link-nav {{ routeActive('faq') }}" href="{{ route('faq') }}"><i data-feather="database"></i><span>Complain User</span></a>
+                    </li>
+
+                    <!-- Admin Panel -->
+                    <li class="sidebar-main-title">
+                        <div>
+                            <h6>Speification Product</h6>
+                        </div>
+                    </li>
+                    <li>
+                        <a class="nav-link menu-title link-nav {{ routeActive('faq') }}" href="{{ route('faq') }}"><i data-feather="grid"></i><span>Category</span></a>
+                    </li>
+                    <li>
+                        <a class="nav-link menu-title link-nav {{ routeActive('faq') }}" href="{{ route('faq') }}"><i data-feather="grid"></i><span>Product</span></a>
+                    </li>
+                    <li>
+                        <a class="nav-link menu-title link-nav {{ routeActive('faq') }}" href="{{ route('faq') }}"><i data-feather="grid"></i><span>Genre</span></a>
+                    </li>
+                    <li>
+                        <a class="nav-link menu-title link-nav {{ routeActive('faq') }}" href="{{ route('faq') }}"><i data-feather="grid"></i><span>Style</span></a>
+                    </li>
+
+                    <!-- Admin Panel -->
+                    <li class="sidebar-main-title">
+                        <div>
+                            <h6>Database User</h6>
+                        </div>
+                    </li>
+                    <li>
+                        <a class="nav-link menu-title link-nav {{ routeActive('faq') }}" href="{{ route('faq') }}"><i data-feather="database"></i><span>Data User</span></a>
+                    </li>
+
+
+
+                    <li class="dropdown">
+                        <a class="nav-link menu-title {{ prefixActive('/data-tables') }}" href="javascript:void(0)"><i data-feather="database"></i><span>Manage Data User </span></a>
+                        <ul class="nav-submenu menu-content" style="display: {{ prefixBlock('/data-tables') }};">
+                            <li><a href="{{ route('datatable-basic-init') }}" class="{{routeActive('datatable-basic-init')}}">Basic Init</a></li>
+                            <li><a href="{{ route('datatable-advance') }}" class="{{routeActive('datatable-advance')}}">Advance Init</a></li>
+                            <li><a href="{{ route('datatable-styling') }}" class="{{routeActive('datatable-styling')}}">Styling</a></li>
+                            <li><a href="{{ route('datatable-AJAX') }}" class="{{routeActive('datatable-AJAX')}}">AJAX</a></li>
+                            <li><a href="{{ route('datatable-server-side') }}" class="{{routeActive('datatable-server-side')}}">Server Side</a></li>
+                            <li><a href="{{ route('datatable-plugin') }}" class="{{routeActive('datatable-plugin')}}">Plug-in</a></li>
+                            <li><a href="{{ route('datatable-API') }}" class="{{routeActive('datatable-API')}}">API</a></li>
+                            <li><a href="{{ route('datatable-data-source') }}" class="{{routeActive('datatable-data-source')}}">Data Sources</a></li>
+                        </ul>
+                    </li>
+
                     <li class="sidebar-main-title">
                         <div>
                             <h6>Table</h6>
@@ -264,12 +337,12 @@
                             <li><a href="{{ route('projectcreate') }}" class="{{routeActive('projectcreate')}}">Create new </a></li>
                         </ul>
                     </li>
-                    <li class="dropdown">
+                    {{-- <li class="dropdown">
                         <a class="nav-link menu-title link-nav {{routeActive('file-manager')}}" href="{{ route('file-manager') }}"><i data-feather="git-pull-request"></i><span>File manager</span></a>
                     </li>
                     <li class="dropdown">
                         <a class="nav-link menu-title link-nav {{routeActive('kanban')}}" href="{{ route('kanban') }}"><i data-feather="monitor"></i><span>Kanban Board</span></a>
-                    </li>
+                    </li> --}}
                     <li class="dropdown">
                         <a class="nav-link menu-title {{ prefixActive('/ecommerce') }}" href="javascript:void(0)"><i data-feather="shopping-bag"></i><span>Ecommerce</span></a>
                         <ul class="nav-submenu menu-content" style="display: {{ prefixBlock('/ecommerce') }};">
@@ -285,14 +358,14 @@
                             <li><a href="{{ route('pricing') }}" class="{{routeActive('pricing')}}">Pricing</a></li>
                         </ul>
                     </li>
-                    <li class="dropdown">
+                    {{-- <li class="dropdown">
                         <a class="nav-link menu-title {{ prefixActive('/email') }}" href="javascript:void(0)"><i data-feather="mail"></i><span>Email</span></a>
                         <ul class="nav-submenu menu-content" style="display: {{ prefixBlock('/email') }};">
                             <li><a href="{{ route('email_inbox') }}" class="{{routeActive('email_inbox')}}">Mail Inbox</a></li>
                             <li><a href="{{ route('email_read') }}" class="{{routeActive('email_read')}}">Read mail</a></li>
                             <li><a href="{{ route('email_compose') }}" class="{{routeActive('email_compose')}}">Compose</a></li>
                         </ul>
-                    </li>
+                    </li> --}}
                     <li class="dropdown">
                         <a class="nav-link menu-title {{ prefixActive('/chat') }}" href="javascript:void(0)"><i data-feather="message-circle"></i><span>Chat</span></a>
                         <ul class="nav-submenu menu-content" style="display: {{ prefixBlock('/chat') }};">
@@ -308,13 +381,13 @@
                             <li><a href="{{ route('user-cards') }}" class="{{routeActive('user-cards')}}">Users Cards</a></li>
                         </ul>
                     </li>
-                    <li class="dropdown">
+                    {{-- <li class="dropdown">
                         <a class="nav-link menu-title link-nav {{routeActive('bookmark')}}" href="{{ route('bookmark') }}"><i data-feather="heart"></i><span>Bookmarks</span></a>
                     </li>
                     <li class="dropdown">
                         <a class="nav-link menu-title link-nav {{routeActive('contacts')}}" href="{{ route('contacts') }}"><i data-feather="list"></i><span>Contacts</span></a>
-                    </li>
-                    <li class="dropdown">
+                    </li> --}}
+                    {{-- <li class="dropdown">
                         <a class="nav-link menu-title link-nav {{routeActive('task')}}" href="{{ route('task') }}"><i data-feather="check-square"></i><span>Tasks</span></a>
                     </li>
                     <li class="dropdown">
@@ -328,21 +401,21 @@
                     </li>
                     <li class="dropdown">
                         <a class="nav-link menu-title link-nav {{routeActive('search')}}" href="{{ route('search') }}"><i data-feather="search"></i><span>Search Result</span></a>
-                    </li>
-                    <li class="sidebar-main-title">
+                    </li> --}}
+                    {{-- <li class="sidebar-main-title">
                         <div>
                             <h6>Pages</h6>
                         </div>
-                    </li>
-                    <li>
-                        {{-- <a class="nav-link menu-title link-nav" href="{{ route('landing-page') }}" class="{{routeActive('landing-page')}}"><i data-feather="navigation-2"></i><span>Landing page</span></a> --}}
-                    </li>
+                    </li> --}}
+                    {{-- <li>
+                        <a class="nav-link menu-title link-nav" href="{{ route('landing-page') }}" class="{{routeActive('landing-page')}}"><i data-feather="navigation-2"></i><span>Landing page</span></a>
+                    </li> --}}
                     <li>
                         <a class="nav-link menu-title link-nav {{routeActive('sample-page')}}" href="{{ route('sample-page') }}"><i data-feather="file"></i><span>Sample page</span></a>
                     </li>
-                    <li class="dropdown">
+                    {{-- <li class="dropdown">
                         <a class="nav-link menu-title link-nav {{routeActive('internationalization')}}" href="{{ route('internationalization') }}"><i data-feather="aperture"></i><span>Internationalization</span></a>
-                    </li>
+                    </li> --}}
                     <li class="mega-menu">
                         <a class="nav-link menu-title {{ prefixActive('/') }}" href="javascript:void(0)"><i data-feather="layers"></i><span>Others</span></a>
                         <div class="mega-menu-container menu-content" style="display: {{ prefixBlock('/') }};">

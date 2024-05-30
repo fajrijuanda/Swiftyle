@@ -10,29 +10,19 @@ class OrderHistory extends Model
 {
     use HasFactory;
 
-    protected $keyType = 'uuid';
+    protected $keyType = 'id';
     public $incrementing = false;
 
     protected $fillable = [
-        'uuid',
-        'order_uuid',
+        'id',
+        'order_id',
         'status',
         'description',
     ];
 
     public function order()
     {
-        return $this->belongsTo(Order::class, 'order_uuid', 'uuid');
+        return $this->belongsTo(Order::class, 'order_id', 'id');
     }
 
-    protected static function boot()
-    {
-        parent::boot();
-
-        static::creating(function ($model) {
-            if (empty($model->uuid)) {
-                $model->uuid = UuidHelper::generateUuid();
-            }
-        });
-    }
 }

@@ -6,16 +6,22 @@
 
 @push('css')
 <link rel="stylesheet" type="text/css" href="{{ asset('assets/css/sweetalert2.css') }}">
+<style>
+    .btn-full-width {
+        width: 100%;
+    }
+</style>
 @endpush
 
 @section('content')
     <section>
 	    <div class="container-fluid p-0">
+			<img class="bg-img-cover bg-center" src="{{ asset('assets/images/login/sign-up.png') }}" />
 	        <div class="row m-0">
 	            <div class="col-12 p-0">
 	                <div class="login-card">
-	                    <form class="theme-form login-form">
-	                        <h4>Create your account</h4>
+	                    <form class="theme-form login-form" style="border-radius:20px">
+	                        <h4 >Create your account</h4>
 	                        <h6>Enter your personal details to create account</h6>
 	                        <div class="form-group">
 	                            <label>Your Name</label>
@@ -52,10 +58,10 @@
 	                            </div>
 	                        </div>
 	                        <div class="form-group">
-	                            <button class="btn btn-primary btn-block" type="submit">Create Account</button>
+	                            <button class="btn btn-primary btn-full-width" type="submit">Create Account</button>
 	                        </div>
 	                        <div class="login-social-title">
-	                            <h5>signup with</h5>
+	                            <h5>Sign up with</h5>
 	                        </div>
 	                        <div class="form-group">
 	                            <ul class="login-social">

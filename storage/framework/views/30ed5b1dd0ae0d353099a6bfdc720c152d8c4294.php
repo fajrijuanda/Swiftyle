@@ -27,114 +27,18 @@
                     <li class="back-btn">
                         <div class="mobile-back text-end"><span>Back</span><i class="fa fa-angle-right ps-2" aria-hidden="true"></i></div>
                     </li>
-                    <li class="sidebar-main-title">
-                        <div>
-                            <h6>General</h6>
-                        </div>
+                    <li>
+                        <a href="<?php echo e(route('index')); ?>" class="nav-link <?php echo e(prefixActive('/dashboard')); ?> <?php echo e(routeActive('index')); ?>" href="javascript:void(0)"><i data-feather="home"></i><span>Dashboard</span></a>                  
+                        
+                            
+                            
+                        
                     </li>
-                    <li class="dropdown">
-                        <a class="nav-link menu-title <?php echo e(prefixActive('/dashboard')); ?>" href="javascript:void(0)"><i data-feather="home"></i><span>Dashboard</span></a>                  
-                        <ul class="nav-submenu menu-content" style="display: <?php echo e(prefixBlock('/dashboard')); ?>;">
-                            <li><a href="<?php echo e(route('index')); ?>" class="<?php echo e(routeActive('index')); ?>">Default</a></li>
-                            <li><a href="<?php echo e(route('dashboard-02')); ?>" class="<?php echo e(routeActive('dashboard-02')); ?>">Ecommerce</a></li>
-                        </ul>
-                    </li>
-                    <li class="dropdown">
-                        <a class="nav-link menu-title <?php echo e(prefixActive('/widgets')); ?>" href="javascript:void(0)"><i data-feather="airplay"></i><span>Widgets</span></a>
-                        <ul class="nav-submenu menu-content"  style="display: <?php echo e(prefixBlock('/widgets')); ?>;">
-                            <li><a href="<?php echo e(route('general-widget')); ?>" class="<?php echo e(routeActive('general-widget')); ?>">General</a></li>
-                            <li><a href="<?php echo e(route('chart-widget')); ?>" class="<?php echo e(routeActive('chart-widget')); ?>">Chart</a></li>
-                        </ul>
-                    </li>
-                    <li class="sidebar-main-title">
-                        <div>
-                            <h6>Components</h6>
-                        </div>
-                    </li>
-                    <li class="dropdown">
-                        <a class="nav-link menu-title <?php echo e(prefixActive('/ui-kits')); ?>" href="javascript:void(0)"><i data-feather="box"></i><span>Ui Kits</span></a>
-                        <ul class="nav-submenu menu-content" style="display: <?php echo e(prefixBlock('/ui-kits')); ?>;">
-                            <li><a href="<?php echo e(route('state-color')); ?>" class="<?php echo e(routeActive('state-color')); ?>">State color</a></li>
-                            <li><a href="<?php echo e(route('typography')); ?>" class="<?php echo e(routeActive('typography')); ?>">Typography</a></li>
-                            <li><a href="<?php echo e(route('avatars')); ?>" class="<?php echo e(routeActive('avatars')); ?>">Avatars</a></li>
-                            <li><a href="<?php echo e(route('helper-classes')); ?>" class="<?php echo e(routeActive('helper-classes')); ?>">helper classes</a></li>
-                            <li><a href="<?php echo e(route('grid')); ?>" class="<?php echo e(routeActive('grid')); ?>">Grid</a></li>
-                            <li><a href="<?php echo e(route('tag-pills')); ?>" class="<?php echo e(routeActive('tag-pills')); ?>">Tag & pills</a></li>
-                            <li><a href="<?php echo e(route('progress-bar')); ?>" class="<?php echo e(routeActive('progress-bar')); ?>">Progress</a></li>
-                            <li><a href="<?php echo e(route('modal')); ?>" class="<?php echo e(routeActive('modal')); ?>">Modal</a></li>
-                            <li><a href="<?php echo e(route('alert')); ?>" class="<?php echo e(routeActive('alert')); ?>">Alert</a></li>
-                            <li><a href="<?php echo e(route('popover')); ?>" class="<?php echo e(routeActive('popover')); ?>">Popover</a></li>
-                            <li><a href="<?php echo e(route('tooltip')); ?>" class="<?php echo e(routeActive('tooltip')); ?>">Tooltip</a></li>
-                            <li><a href="<?php echo e(route('loader')); ?>" class="<?php echo e(routeActive('loader')); ?>">Spinners</a></li>
-                            <li><a href="<?php echo e(route('dropdown')); ?>" class="<?php echo e(routeActive('dropdown')); ?>">Dropdown</a></li>
-                            <li><a href="<?php echo e(route('according')); ?>" class="<?php echo e(routeActive('according')); ?>">Accordion</a></li>
-                            <li>
-                                <a class="submenu-title  <?php echo e(in_array(Route::currentRouteName(), ['tab-bootstrap','tab-material']) ? 'active' : ''); ?>" href="javascript:void(0)">
-                                    Tabs<span class="sub-arrow"><i class="fa fa-chevron-right"></i></span>
-                                </a>
-                                <ul class="nav-sub-childmenu submenu-content" style="display: <?php echo e(in_array(Route::currentRouteName(), ['tab-bootstrap','tab-material']) ? 'block' : 'none'); ?>;">
-                                    <li><a href="<?php echo e(route('tab-bootstrap')); ?>" class="<?php echo e(routeActive('tab-bootstrap')); ?>">Bootstrap Tabs</a></li>
-                                    <li><a href="<?php echo e(route('tab-material')); ?>" class="<?php echo e(routeActive('tab-material')); ?>">Line Tabs</a></li>
-                                </ul>
-                            </li>
-                            <li><a href="<?php echo e(route('navs')); ?>" class="<?php echo e(routeActive('navs')); ?>">Navs</a></li>
-                            <li><a href="<?php echo e(route('box-shadow')); ?>" class="<?php echo e(routeActive('box-shadow')); ?>">Shadow</a></li>
-                            <li><a href="<?php echo e(route('list')); ?>" class="<?php echo e(routeActive('list')); ?>">Lists</a></li>
-                        </ul>
-                    </li>
-                    <li class="dropdown">
-                        <a class="nav-link menu-title <?php echo e(prefixActive('/bonus-ui')); ?>" href="javascript:void(0)"><i data-feather="folder-plus"></i><span>Bonus Ui</span></a>
-                        <ul class="nav-submenu menu-content" style="display: <?php echo e(prefixBlock('/bonus-ui')); ?>;">
-                            <li><a href="<?php echo e(route('scrollable')); ?>" class="<?php echo e(routeActive('scrollable')); ?>">Scrollable</a></li>
-                            <li><a href="<?php echo e(route('tree')); ?>" class="<?php echo e(routeActive('tree')); ?>">Tree view</a></li>
-                            <li><a href="<?php echo e(route('bootstrap-notify')); ?>" class="<?php echo e(routeActive('bootstrap-notify')); ?>">Bootstrap Notify</a></li>
-                            <li><a href="<?php echo e(route('rating')); ?>" class="<?php echo e(routeActive('rating')); ?>">Rating</a></li>
-                            <li><a href="<?php echo e(route('dropzone')); ?>" class="<?php echo e(routeActive('dropzone')); ?>">dropzone</a></li>
-                            <li><a href="<?php echo e(route('tour')); ?>" class="<?php echo e(routeActive('tour')); ?>">Tour</a></li>
-                            <li><a href="<?php echo e(route('sweet-alert2')); ?>" class="<?php echo e(routeActive('sweet-alert2')); ?>">SweetAlert2</a></li>
-                            <li><a href="<?php echo e(route('modal-animated')); ?>" class="<?php echo e(routeActive('modal-animated')); ?>">Animated Modal</a></li>
-                            <li><a href="<?php echo e(route('owl-carousel')); ?>" class="<?php echo e(routeActive('owl-carousel')); ?>">Owl Carousel</a></li>
-                            <li><a href="<?php echo e(route('ribbons')); ?>" class="<?php echo e(routeActive('ribbons')); ?>">Ribbons</a></li>
-                            <li><a href="<?php echo e(route('pagination')); ?>" class="<?php echo e(routeActive('pagination')); ?>">Pagination</a></li>
-                            <li><a href="<?php echo e(route('steps')); ?>" class="<?php echo e(routeActive('steps')); ?>">Steps</a></li>
-                            <li><a href="<?php echo e(route('breadcrumb')); ?>" class="<?php echo e(routeActive('breadcrumb')); ?>">Breadcrumb</a></li>
-                            <li><a href="<?php echo e(route('range-slider')); ?>" class="<?php echo e(routeActive('range-slider')); ?>">Range Slider</a></li>
-                            <li><a href="<?php echo e(route('image-cropper')); ?>" class="<?php echo e(routeActive('image-cropper')); ?>">Image cropper</a></li>
-                            <li><a href="<?php echo e(route('sticky')); ?>" class="<?php echo e(routeActive('sticky')); ?>">Sticky </a></li>
-                            <li><a href="<?php echo e(route('basic-card')); ?>" class="<?php echo e(routeActive('basic-card')); ?>">Basic Card</a></li>
-                            <li><a href="<?php echo e(route('creative-card')); ?>" class="<?php echo e(routeActive('creative-card')); ?>">Creative Card</a></li>
-                            <li><a href="<?php echo e(route('tabbed-card')); ?>" class="<?php echo e(routeActive('tabbed-card')); ?>">Tabbed Card</a></li>
-                            <li><a href="<?php echo e(route('dragable-card')); ?>" class="<?php echo e(routeActive('dragable-card')); ?>">Draggable Card</a></li>
-                            <li>
-                                <a class="submenu-title <?php echo e(in_array(Route::currentRouteName(), ['timeline-v-1','timeline-v-2']) ? 'active' : ''); ?>" href="javascript:void(0)">
-                                    Timeline<span class="sub-arrow"><i class="fa fa-chevron-right"></i></span>
-                                </a>
-                                <ul class="nav-sub-childmenu submenu-content" style="display: <?php echo e(in_array(Route::currentRouteName(), ['timeline-v-1','timeline-v-2']) ? 'block' : 'none'); ?>;">
-                                    <li><a href="<?php echo e(route('timeline-v-1')); ?>" class="<?php echo e(routeActive('timeline-v-1')); ?>">Timeline 1</a></li>
-                                    <li><a href="<?php echo e(route('timeline-v-2')); ?>" class="<?php echo e(routeActive('timeline-v-2')); ?>">Timeline 2</a></li>
-                                </ul>
-                            </li>
-                        </ul>
-                    </li>
-                    <li class="dropdown">
-                        <a class="nav-link menu-title <?php echo e(prefixActive('/builders')); ?>" href="javascript:void(0)"><i data-feather="edit-3"></i><span>Builders</span></a>
-                        <ul class="nav-submenu menu-content" style="display: <?php echo e(prefixBlock('/builders')); ?>;">
-                            <li><a href="<?php echo e(route('form-builder-1')); ?>" class="<?php echo e(routeActive('form-builder-1')); ?>">Form Builder 1</a></li>
-                            <li><a href="<?php echo e(route('form-builder-2')); ?>" class="<?php echo e(routeActive('form-builder-2')); ?>">Form Builder 2</a></li>
-                            <li><a href="<?php echo e(route('pagebuild')); ?>" class="<?php echo e(routeActive('pagebuild')); ?>">Page Builder</a></li>
-                            <li><a href="<?php echo e(route('button-builder')); ?>" class="<?php echo e(routeActive('button-builder')); ?>">Button Builder</a></li>
-                        </ul>
-                    </li>
-                    <li class="dropdown">
-                        <a class="nav-link menu-title <?php echo e(prefixActive('/animation')); ?>" href="javascript:void(0)"><i data-feather="cloud-drizzle"></i><span>Animation</span></a>
-                        <ul class="nav-submenu menu-content" style="display: <?php echo e(prefixBlock('/animation')); ?>;">
-                            <li><a href="<?php echo e(route('animate')); ?>" class="<?php echo e(routeActive('animate')); ?>">Animate</a></li>
-                            <li><a href="<?php echo e(route('scroll-reval')); ?>" class="<?php echo e(routeActive('scroll-reval')); ?>">Scroll Reveal</a></li>
-                            <li><a href="<?php echo e(route('aos')); ?>" class="<?php echo e(routeActive('aos')); ?>">AOS animation</a></li>
-                            <li><a href="<?php echo e(route('tilt')); ?>" class="<?php echo e(routeActive('tilt')); ?>">Tilt Animation</a></li>
-                            <li><a href="<?php echo e(route('wow')); ?>" class="<?php echo e(routeActive('wow')); ?>">Wow Animation</a></li>
-                        </ul>
-                    </li>
+                    
+                    
+                    
+                    
+                    
                     <li class="dropdown">
                         <a class="nav-link menu-title <?php echo e(prefixActive('/icons')); ?>" href="javascript:void(0)"><i data-feather="command"></i><span>Icons</span></a>
                         <ul class="nav-submenu menu-content" style="display: <?php echo e(prefixBlock('/icons')); ?>;">
@@ -146,68 +50,90 @@
                             <li><a href="<?php echo e(route('whether-icon')); ?>" class="<?php echo e(routeActive('whether-icon')); ?>">Whether Icon </a></li>
                         </ul>
                     </li>
-                    <li class="dropdown">
-                        <a class="nav-link menu-title <?php echo e(prefixActive('/buttons')); ?>" href="javascript:void(0)"><i data-feather="cloud"></i><span>Buttons</span></a>
-                        <ul class="nav-submenu menu-content" style="display: <?php echo e(prefixBlock('/buttons')); ?>;">
-                            <li><a href="<?php echo e(route('buttons')); ?>" class="<?php echo e(routeActive('buttons')); ?>">Default Style</a></li>
-                            <li><a href="<?php echo e(route('buttons-flat')); ?>" class="<?php echo e(routeActive('buttons-flat')); ?>">Flat Style</a></li>
-                            <li><a href="<?php echo e(route('buttons-edge')); ?>" class="<?php echo e(routeActive('buttons-edge')); ?>">Edge Style</a></li>
-                            <li><a href="<?php echo e(route('raised-button')); ?>" class="<?php echo e(routeActive('raised-button')); ?>">Raised Style</a></li>
-                            <li><a href="<?php echo e(route('button-group')); ?>" class="<?php echo e(routeActive('button-group')); ?>">Button Group</a></li>
-                        </ul>
-                    </li>
-                    <li class="dropdown">
-                        <a class="nav-link menu-title <?php echo e(prefixActive('/charts')); ?>" href="javascript:void(0)"><i data-feather="bar-chart"></i><span>Charts</span></a>
-                        <ul class="nav-submenu menu-content" style="display: <?php echo e(prefixBlock('/charts')); ?>;">
-                            <li><a href="<?php echo e(route('chart-apex')); ?>" class="<?php echo e(routeActive('chart-apex')); ?>">Apex Chart</a></li>
-                            <li><a href="<?php echo e(route('chart-google')); ?>" class="<?php echo e(routeActive('chart-google')); ?>">Google Chart</a></li>
-                            <li><a href="<?php echo e(route('chart-sparkline')); ?>" class="<?php echo e(routeActive('chart-sparkline')); ?>">Sparkline chart</a></li>
-                            <li><a href="<?php echo e(route('chart-flot')); ?>" class="<?php echo e(routeActive('chart-flot')); ?>">Flot Chart</a></li>
-                            <li><a href="<?php echo e(route('chart-knob')); ?>" class="<?php echo e(routeActive('chart-knob')); ?>">Knob Chart</a></li>
-                            <li><a href="<?php echo e(route('chart-morris')); ?>" class="<?php echo e(routeActive('chart-morris')); ?>">Morris Chart</a></li>
-                            <li><a href="<?php echo e(route('chartjs')); ?>" class="<?php echo e(routeActive('chartjs')); ?>">Chatjs Chart</a></li>
-                            <li><a href="<?php echo e(route('chartist')); ?>" class="<?php echo e(routeActive('chartist')); ?>">Chartist Chart</a></li>
-                            <li><a href="<?php echo e(route('chart-peity')); ?>" class="<?php echo e(routeActive('chart-peity')); ?>">Peity Chart</a></li>
-                        </ul>
-                    </li>
+                    
+                    
+                    
+                    
+                    
+                    
+
+                    <!-- Admin Panel -->
                     <li class="sidebar-main-title">
                         <div>
-                            <h6>Forms</h6>
+                            <h6>Database User</h6>
                         </div>
                     </li>
+                    <li>
+                        <a class="nav-link menu-title link-nav <?php echo e(routeActive('faq')); ?>" href="<?php echo e(route('faq')); ?>"><i data-feather="database"></i><span>Data User</span></a>
+                    </li>
+                    <li>
+                        <a class="nav-link menu-title link-nav <?php echo e(routeActive('faq')); ?>" href="<?php echo e(route('faq')); ?>"><i data-feather="database"></i><span>Data Order</span></a>
+                    </li>
+                    <li>
+                        <a class="nav-link menu-title link-nav <?php echo e(routeActive('faq')); ?>" href="<?php echo e(route('faq')); ?>"><i data-feather="database"></i><span>Complain User</span></a>
+                    </li>
+
+                    <!-- Seller Panel -->
+                    <li class="sidebar-main-title">
+                        <div>
+                            <h6>Database Seller</h6>
+                        </div>
+                    </li>
+                    <li>
+                        <a class="nav-link menu-title link-nav <?php echo e(routeActive('faq')); ?>" href="<?php echo e(route('faq')); ?>"><i data-feather="database"></i><span>Add Shop</span></a>
+                    </li>
+                    <li>
+                        <a class="nav-link menu-title link-nav <?php echo e(routeActive('faq')); ?>" href="<?php echo e(route('faq')); ?>"><i data-feather="database"></i><span>Data Order</span></a>
+                    </li>
+                    <li>
+                        <a class="nav-link menu-title link-nav <?php echo e(routeActive('faq')); ?>" href="<?php echo e(route('faq')); ?>"><i data-feather="database"></i><span>Complain User</span></a>
+                    </li>
+
+                    <!-- Admin Panel -->
+                    <li class="sidebar-main-title">
+                        <div>
+                            <h6>Speification Product</h6>
+                        </div>
+                    </li>
+                    <li>
+                        <a class="nav-link menu-title link-nav <?php echo e(routeActive('faq')); ?>" href="<?php echo e(route('faq')); ?>"><i data-feather="grid"></i><span>Category</span></a>
+                    </li>
+                    <li>
+                        <a class="nav-link menu-title link-nav <?php echo e(routeActive('faq')); ?>" href="<?php echo e(route('faq')); ?>"><i data-feather="grid"></i><span>Product</span></a>
+                    </li>
+                    <li>
+                        <a class="nav-link menu-title link-nav <?php echo e(routeActive('faq')); ?>" href="<?php echo e(route('faq')); ?>"><i data-feather="grid"></i><span>Genre</span></a>
+                    </li>
+                    <li>
+                        <a class="nav-link menu-title link-nav <?php echo e(routeActive('faq')); ?>" href="<?php echo e(route('faq')); ?>"><i data-feather="grid"></i><span>Style</span></a>
+                    </li>
+
+                    <!-- Admin Panel -->
+                    <li class="sidebar-main-title">
+                        <div>
+                            <h6>Database User</h6>
+                        </div>
+                    </li>
+                    <li>
+                        <a class="nav-link menu-title link-nav <?php echo e(routeActive('faq')); ?>" href="<?php echo e(route('faq')); ?>"><i data-feather="database"></i><span>Data User</span></a>
+                    </li>
+
+
+
                     <li class="dropdown">
-                        <a class="nav-link menu-title <?php echo e(prefixActive('/form-controls')); ?>" href="javascript:void(0)"><i data-feather="sliders"></i><span>Form Controls </span></a>
-                        <ul class="nav-submenu menu-content" style="display: <?php echo e(prefixBlock('/form-controls')); ?>;">
-                            <li><a href="<?php echo e(route('form-validation')); ?>" class="<?php echo e(routeActive('form-validation')); ?>">Form Validation</a></li>
-                            <li><a href="<?php echo e(route('base-input')); ?>" class="<?php echo e(routeActive('base-input')); ?>">Base Inputs</a></li>
-                            <li><a href="<?php echo e(route('radio-checkbox-control')); ?>" class="<?php echo e(routeActive('radio-checkbox-control')); ?>">Checkbox & Radio</a></li>
-                            <li><a href="<?php echo e(route('input-group')); ?>" class="<?php echo e(routeActive('input-group')); ?>">Input Groups</a></li>
-                            <li><a href="<?php echo e(route('megaoptions')); ?>" class="<?php echo e(routeActive('megaoptions')); ?>">Mega Options </a></li>
+                        <a class="nav-link menu-title <?php echo e(prefixActive('/data-tables')); ?>" href="javascript:void(0)"><i data-feather="database"></i><span>Manage Data User </span></a>
+                        <ul class="nav-submenu menu-content" style="display: <?php echo e(prefixBlock('/data-tables')); ?>;">
+                            <li><a href="<?php echo e(route('datatable-basic-init')); ?>" class="<?php echo e(routeActive('datatable-basic-init')); ?>">Basic Init</a></li>
+                            <li><a href="<?php echo e(route('datatable-advance')); ?>" class="<?php echo e(routeActive('datatable-advance')); ?>">Advance Init</a></li>
+                            <li><a href="<?php echo e(route('datatable-styling')); ?>" class="<?php echo e(routeActive('datatable-styling')); ?>">Styling</a></li>
+                            <li><a href="<?php echo e(route('datatable-AJAX')); ?>" class="<?php echo e(routeActive('datatable-AJAX')); ?>">AJAX</a></li>
+                            <li><a href="<?php echo e(route('datatable-server-side')); ?>" class="<?php echo e(routeActive('datatable-server-side')); ?>">Server Side</a></li>
+                            <li><a href="<?php echo e(route('datatable-plugin')); ?>" class="<?php echo e(routeActive('datatable-plugin')); ?>">Plug-in</a></li>
+                            <li><a href="<?php echo e(route('datatable-API')); ?>" class="<?php echo e(routeActive('datatable-API')); ?>">API</a></li>
+                            <li><a href="<?php echo e(route('datatable-data-source')); ?>" class="<?php echo e(routeActive('datatable-data-source')); ?>">Data Sources</a></li>
                         </ul>
                     </li>
-                    <li class="dropdown">
-                        <a class="nav-link menu-title <?php echo e(prefixActive('/form-widgets')); ?>" href="javascript:void(0)"><i data-feather="package"></i><span>Form Widgets</span></a>
-                        <ul class="nav-submenu menu-content" style="display: <?php echo e(prefixBlock('/form-widgets')); ?>;">
-                            <li><a href="<?php echo e(route('datepicker')); ?>" class="<?php echo e(routeActive('datepicker')); ?>">Datepicker</a></li>
-                            <li><a href="<?php echo e(route('time-picker')); ?>" class="<?php echo e(routeActive('time-picker')); ?>">Timepicker</a></li>
-                            <li><a href="<?php echo e(route('datetimepicker')); ?>" class="<?php echo e(routeActive('datetimepicker')); ?>">Datetimepicker</a></li>
-                            <li><a href="<?php echo e(route('daterangepicker')); ?>" class="<?php echo e(routeActive('daterangepicker')); ?>">Daterangepicker</a></li>
-                            <li><a href="<?php echo e(route('touchspin')); ?>" class="<?php echo e(routeActive('touchspin')); ?>">Touchspin</a></li>
-                            <li><a href="<?php echo e(route('select2')); ?>" class="<?php echo e(routeActive('select2')); ?>">Select2</a></li>
-                            <li><a href="<?php echo e(route('switch')); ?>" class="<?php echo e(routeActive('switch')); ?>">Switch</a></li>
-                            <li><a href="<?php echo e(route('typeahead')); ?>" class="<?php echo e(routeActive('typeahead')); ?>">Typeahead</a></li>
-                            <li><a href="<?php echo e(route('clipboard')); ?>" class="<?php echo e(routeActive('clipboard')); ?>">Clipboard </a></li>
-                        </ul>
-                    </li>
-                    <li class="dropdown">
-                        <a class="nav-link menu-title <?php echo e(prefixActive('/form-layout')); ?>" href="javascript:void(0)"><i data-feather="layout"></i><span>Form layout</span></a>
-                        <ul class="nav-submenu menu-content" style="display: <?php echo e(prefixBlock('/form-layout')); ?>;">
-                            <li><a href="<?php echo e(route('default-form')); ?>" class="<?php echo e(routeActive('default-form')); ?>">Default Forms</a></li>
-                            <li><a href="<?php echo e(route('form-wizard')); ?>" class="<?php echo e(routeActive('form-wizard')); ?>">Form Wizard 1</a></li>
-                            <li><a href="<?php echo e(route('form-wizard-two')); ?>" class="<?php echo e(routeActive('form-wizard-two')); ?>">Form Wizard 2</a></li>
-                            <li><a href="<?php echo e(route('form-wizard-three')); ?>" class="<?php echo e(routeActive('form-wizard-three')); ?>">Form Wizard 3</a></li>
-                        </ul>
-                    </li>
+
                     <li class="sidebar-main-title">
                         <div>
                             <h6>Table</h6>
@@ -264,12 +190,7 @@
                             <li><a href="<?php echo e(route('projectcreate')); ?>" class="<?php echo e(routeActive('projectcreate')); ?>">Create new </a></li>
                         </ul>
                     </li>
-                    <li class="dropdown">
-                        <a class="nav-link menu-title link-nav <?php echo e(routeActive('file-manager')); ?>" href="<?php echo e(route('file-manager')); ?>"><i data-feather="git-pull-request"></i><span>File manager</span></a>
-                    </li>
-                    <li class="dropdown">
-                        <a class="nav-link menu-title link-nav <?php echo e(routeActive('kanban')); ?>" href="<?php echo e(route('kanban')); ?>"><i data-feather="monitor"></i><span>Kanban Board</span></a>
-                    </li>
+                    
                     <li class="dropdown">
                         <a class="nav-link menu-title <?php echo e(prefixActive('/ecommerce')); ?>" href="javascript:void(0)"><i data-feather="shopping-bag"></i><span>Ecommerce</span></a>
                         <ul class="nav-submenu menu-content" style="display: <?php echo e(prefixBlock('/ecommerce')); ?>;">
@@ -285,14 +206,7 @@
                             <li><a href="<?php echo e(route('pricing')); ?>" class="<?php echo e(routeActive('pricing')); ?>">Pricing</a></li>
                         </ul>
                     </li>
-                    <li class="dropdown">
-                        <a class="nav-link menu-title <?php echo e(prefixActive('/email')); ?>" href="javascript:void(0)"><i data-feather="mail"></i><span>Email</span></a>
-                        <ul class="nav-submenu menu-content" style="display: <?php echo e(prefixBlock('/email')); ?>;">
-                            <li><a href="<?php echo e(route('email_inbox')); ?>" class="<?php echo e(routeActive('email_inbox')); ?>">Mail Inbox</a></li>
-                            <li><a href="<?php echo e(route('email_read')); ?>" class="<?php echo e(routeActive('email_read')); ?>">Read mail</a></li>
-                            <li><a href="<?php echo e(route('email_compose')); ?>" class="<?php echo e(routeActive('email_compose')); ?>">Compose</a></li>
-                        </ul>
-                    </li>
+                    
                     <li class="dropdown">
                         <a class="nav-link menu-title <?php echo e(prefixActive('/chat')); ?>" href="javascript:void(0)"><i data-feather="message-circle"></i><span>Chat</span></a>
                         <ul class="nav-submenu menu-content" style="display: <?php echo e(prefixBlock('/chat')); ?>;">
@@ -308,41 +222,14 @@
                             <li><a href="<?php echo e(route('user-cards')); ?>" class="<?php echo e(routeActive('user-cards')); ?>">Users Cards</a></li>
                         </ul>
                     </li>
-                    <li class="dropdown">
-                        <a class="nav-link menu-title link-nav <?php echo e(routeActive('bookmark')); ?>" href="<?php echo e(route('bookmark')); ?>"><i data-feather="heart"></i><span>Bookmarks</span></a>
-                    </li>
-                    <li class="dropdown">
-                        <a class="nav-link menu-title link-nav <?php echo e(routeActive('contacts')); ?>" href="<?php echo e(route('contacts')); ?>"><i data-feather="list"></i><span>Contacts</span></a>
-                    </li>
-                    <li class="dropdown">
-                        <a class="nav-link menu-title link-nav <?php echo e(routeActive('task')); ?>" href="<?php echo e(route('task')); ?>"><i data-feather="check-square"></i><span>Tasks</span></a>
-                    </li>
-                    <li class="dropdown">
-                        <a class="nav-link menu-title link-nav <?php echo e(routeActive('calendar-basic')); ?>" href="<?php echo e(route('calendar-basic')); ?>"><i data-feather="calendar"></i><span>Calender </span></a>
-                    </li>
-                    <li class="dropdown">
-                        <a class="nav-link menu-title link-nav <?php echo e(routeActive('social-app')); ?>" href="<?php echo e(route('social-app')); ?>"><i data-feather="zap"></i><span>Social App</span></a>
-                    </li>
-                    <li class="dropdown">
-                        <a class="nav-link menu-title link-nav <?php echo e(routeActive('to-do')); ?>" href="<?php echo e(route('to-do')); ?>"><i data-feather="clock"></i><span>To-Do</span></a>
-                    </li>
-                    <li class="dropdown">
-                        <a class="nav-link menu-title link-nav <?php echo e(routeActive('search')); ?>" href="<?php echo e(route('search')); ?>"><i data-feather="search"></i><span>Search Result</span></a>
-                    </li>
-                    <li class="sidebar-main-title">
-                        <div>
-                            <h6>Pages</h6>
-                        </div>
-                    </li>
-                    <li>
-                        
-                    </li>
+                    
+                    
+                    
+                    
                     <li>
                         <a class="nav-link menu-title link-nav <?php echo e(routeActive('sample-page')); ?>" href="<?php echo e(route('sample-page')); ?>"><i data-feather="file"></i><span>Sample page</span></a>
                     </li>
-                    <li class="dropdown">
-                        <a class="nav-link menu-title link-nav <?php echo e(routeActive('internationalization')); ?>" href="<?php echo e(route('internationalization')); ?>"><i data-feather="aperture"></i><span>Internationalization</span></a>
-                    </li>
+                    
                     <li class="mega-menu">
                         <a class="nav-link menu-title <?php echo e(prefixActive('/')); ?>" href="javascript:void(0)"><i data-feather="layers"></i><span>Others</span></a>
                         <div class="mega-menu-container menu-content" style="display: <?php echo e(prefixBlock('/')); ?>;">

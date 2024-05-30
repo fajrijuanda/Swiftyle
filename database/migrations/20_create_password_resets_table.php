@@ -3,6 +3,7 @@
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
+use Illuminate\Support\Facades\DB;
 
 return new class extends Migration
 {
@@ -20,8 +21,7 @@ return new class extends Migration
             $table->timestamp('otp_expiry')->nullable();
             $table->string('email_token', 6)->nullable();
             $table->timestamp('email_token_expiry')->nullable();
-            $table->timestamp('created_at')->nullable();
-
+            $table->timestamp('created_at')->useCurrent();
             $table->primary(['phone', 'email']);
         });
     }

@@ -21,7 +21,7 @@ class User extends Authenticatable implements MustVerifyEmail
      * @var array
      */
     protected $fillable = [
-        'uuid', 'name', 'username', 'email', 'password', 'phone',
+        'id', 'name', 'username', 'email', 'password', 'phone',
     ];
 
     /**
@@ -45,23 +45,13 @@ class User extends Authenticatable implements MustVerifyEmail
     /**
      * Boot method for the model.
      */
-    protected static function boot()
-    {
-        parent::boot();
-
-        static::creating(function ($model) {
-            if (empty($model->uuid)) {
-                $model->uuid = UuidHelper::generateUuid();
-            }
-        });
-    }
 
     /**
      * Get the addresses for the user.
      */
     public function addresses()
     {
-        return $this->hasMany(Address::class, 'user_id', 'uuid');
+        return $this->hasMany(Address::class, 'user_id', 'id');
     }
 }
 

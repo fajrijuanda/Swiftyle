@@ -19,15 +19,5 @@ class ProductSize extends Model
     /**
      * Boot method for the model.
      */
-    protected static function boot()
-    {
-        parent::boot();
-
-        static::creating(function ($model) {
-            if (empty($model->uuid)) {
-                $model->uuid = UuidHelper::generateUuid();
-            }
-        });
-    }
 
 }

@@ -2,6 +2,7 @@
 
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Schema;
 
 return new class extends Migration
@@ -23,8 +24,9 @@ return new class extends Migration
             $table->string('phone', 20)->nullable();
             $table->enum('phone_verified',['Yes', 'No'])->default('No');
             $table->enum('gender',['Male','Female']);
-            $table->enum('role', ['admin','costumer','seller']);
-            $table->timestamps();
+            $table->enum('role', ['Admin','Costumer','Seller']);
+            $table->timestamp('created_at')->useCurrent();
+            $table->timestamp('updated_at')->nullable()->default(DB::raw('CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP'));
         });
     }
 

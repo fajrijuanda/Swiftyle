@@ -10,26 +10,15 @@ class Payment extends Model
 {
     use HasFactory;
 
-    protected $fillable = ['uuid','user_uuid', 'order_uuid', 'amount', 'method', 'status'];
+    protected $fillable = ['id','user_id', 'order_id', 'amount', 'method', 'status'];
 
     public function user()
     {
-        return $this->belongsTo(User::class, 'user_uuid', 'uuid');
+        return $this->belongsTo(User::class, 'user_id', 'id');
     }
 
     public function order()
     {
-        return $this->belongsTo(Order::class, 'order_uuid', 'uuid');
-    }
-
-    protected static function boot()
-    {
-        parent::boot();
-
-        static::creating(function ($model) {
-            if (empty($model->uuid)) {
-                $model->uuid = UuidHelper::generateUuid();
-            }
-        });
+        return $this->belongsTo(Order::class, 'order_id', 'id');
     }
 }

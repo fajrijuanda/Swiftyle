@@ -11,10 +11,10 @@ class Voucher extends Model
     use HasFactory;
 
     protected $fillable = [
-        'uuid', 'code', 'type', 'discount_amount', 'max_uses', 'used_count', 'start_date', 'end_date'
+        'id', 'code', 'type', 'discount_amount', 'max_uses', 'used_count', 'start_date', 'end_date'
     ];
 
-    protected $primaryKey = 'uuid';
+    protected $primaryKey = 'id';
     public $incrementing = false;
     protected $keyType = 'string';
 

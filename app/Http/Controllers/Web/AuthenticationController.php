@@ -9,6 +9,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Validation\ValidationException;
+use Illuminate\Support\Facades\Log;
 
 class AuthenticationController extends Controller
 {
@@ -19,7 +20,7 @@ class AuthenticationController extends Controller
      */
     public function showLoginForm()
     {
-        return view('auth.login');
+        return view('admin.authentication.login');
     }
 
     /**
@@ -29,19 +30,33 @@ class AuthenticationController extends Controller
      * @return \Illuminate\Http\RedirectResponse
      * @throws \Illuminate\Validation\ValidationException
      */
-    public function login(Request $request)
+    
+
+     public function login(Request $request)
+     {
+         $credentials = $request->only('email', 'password');
+     
+         if (Auth::attempt($credentials)) {
+             $request->session()->regenerate();
+     
+             return redirect()->intended('/dashboard');
+         }
+     
+         throw ValidationException::withMessages([
+             'email' => ['The provided credentials are incorrect.'],
+         ]);
+     }
+     
+
+
+    /**
+     * Show the dashboard.
+     *
+     * @return \Illuminate\View\View
+     */
+    public function showDashboard()
     {
-        $credentials = $request->only('email', 'password');
-
-        if (Auth::attempt($credentials)) {
-            $request->session()->regenerate();
-
-            return redirect()->intended('/');
-        }
-
-        throw ValidationException::withMessages([
-            'email' => ['The provided credentials are incorrect.'],
-        ]);
+        return view('admin.dashboard.default'); // Pastikan view ini ada
     }
 
     /**

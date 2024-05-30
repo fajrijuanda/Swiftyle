@@ -9,18 +9,18 @@ class Checkout extends Model
 {
 
     protected $fillable = [
-        'uuid','order_uuid', 'user_uuid', 'payment_method',
+        'id','order_id', 'user_id', 'payment_method',
     ];
-    protected $primaryKey = 'uuid';
+    protected $primaryKey = 'id';
     // Relationships
     public function order()
     {
-        return $this->belongsTo(Order::class, 'order_uuid', 'uuid');
+        return $this->belongsTo(Order::class, 'order_id', 'id');
     }
 
     public function user()
     {
-        return $this->belongsTo(User::class, 'user_uuid', 'uuid');
+        return $this->belongsTo(User::class, 'user_id', 'id');
     }
 
     protected static function boot()
@@ -28,8 +28,8 @@ class Checkout extends Model
         parent::boot();
 
         static::creating(function ($model) {
-            if (empty($model->uuid)) {
-                $model->uuid = UuidHelper::generateUuid();
+            if (empty($model->id)) {
+                $model->id = UuidHelper::generateUuid();
             }
         });
     }

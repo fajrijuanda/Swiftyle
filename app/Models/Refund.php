@@ -11,10 +11,10 @@ class Refund extends Model
     use HasFactory;
 
     protected $fillable = [
-        'uuid',
-        'refund_request_uuid', 
-        'user_uuid', 
-        'transaction_uuid', 
+        'id',
+        'refund_request_id', 
+        'user_id', 
+        'transaction_id', 
         'amount', 
         'status', 
         'reason'
@@ -22,28 +22,17 @@ class Refund extends Model
 
     public function refundRequest()
     {
-        return $this->belongsTo(RefundRequest::class, 'refund_request_uuid', 'uuid');
+        return $this->belongsTo(RefundRequest::class, 'refund_request_id', 'id');
     }
 
     public function user()
     {
-        return $this->belongsTo(User::class, 'user_uuid', 'uuid');
+        return $this->belongsTo(User::class, 'user_id', 'id');
     }
 
     public function transaction()
     {
-        return $this->belongsTo(Transaction::class, 'transaction_uuid', 'uuid');
-    }
-
-    protected static function boot()
-    {
-        parent::boot();
-
-        static::creating(function ($model) {
-            if (empty($model->uuid)) {
-                $model->uuid = UuidHelper::generateUuid();
-            }
-        });
+        return $this->belongsTo(Transaction::class, 'transaction_id', 'id');
     }
 
 }

@@ -12,18 +12,11 @@ use Illuminate\Validation\ValidationException;
 class Address extends Model
 {
     protected $fillable = [
-        'uuid', 'user_uuid', 'country', 'postal_code',
+        'id', 'user_id', 'country', 'postal_code',
     ];
 
     public static function boot()
     {
-        parent::boot();
-
-        static::creating(function ($model) {
-            if (empty($model->uuid)) {
-                $model->uuid = UuidHelper::generateUuid();
-            }
-        });
 
         static::saving(function ($model) {
             if (!Country::isValid($model->country)) {
@@ -33,6 +26,6 @@ class Address extends Model
     }
     public function user()
     {
-        return $this->belongsTo(User::class, 'user_uuid', 'uuid');
+        return $this->belongsTo(User::class, 'user_id', 'id');
     }
 }

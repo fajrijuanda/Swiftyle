@@ -12,26 +12,15 @@ class Complaint extends Model
     use HasFactory;
 
     protected $fillable = [
-        'uuid', 'user_uuid', 'subject', 'description', 'status'
+        'id', 'user_id', 'subject', 'description', 'status'
     ];
 
-    protected $primaryKey = 'uuid';
+    protected $primaryKey = 'id';
     public $incrementing = false;
     protected $keyType = 'string';
 
-    protected static function boot()
-    {
-        parent::boot();
-
-        static::creating(function ($model) {
-            if (empty($model->uuid)) {
-                $model->uuid = UuidHelper::generateUuid();
-            }
-        });
-    }
-
     public function user()
     {
-        return $this->belongsTo(User::class, 'user_uuid', 'uuid');
+        return $this->belongsTo(User::class, 'user_id', 'id');
     }
 }

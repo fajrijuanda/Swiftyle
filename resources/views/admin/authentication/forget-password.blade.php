@@ -6,16 +6,22 @@
 
 @push('css')
 <link rel="stylesheet" type="text/css" href="{{ asset('assets/css/sweetalert2.css') }}">
+<style>
+    .btn-full-width {
+        width: 100%;
+    }
+</style>
 @endpush
 
 @section('content')
     <section>
 	    <div class="container-fluid p-0">
+			<img class="bg-img-cover bg-center" src="{{ asset('assets/images/login/sign-up.png') }}" />
 	        <div class="row m-0">
 	            <div class="col-12 p-0">
 	                <div class="login-card">
 	                    <div class="login-main">
-	                        <form class="theme-form login-form">
+	                        <form class="theme-form login-form" style="border-radius:20px">
 	                            <h4 class="mb-3">Reset Your Password</h4>
 	                            <div class="form-group">
 	                                <label>Enter Your Mobile Number</label>
@@ -29,7 +35,7 @@
 	                                </div>
 	                            </div>
 	                            <div class="form-group">
-	                                <button class="btn btn-primary btn-block" type="submit">Send</button>
+	                                <button class="btn btn-primary btn-full-width" type="submit">Send</button>
 	                            </div>
 	                            <div class="form-group">
 	                                <span class="reset-password-link">If don't receive OTP? <a class="btn-link text-danger" href="javascript:void(0)">Resend</a></span>
@@ -71,7 +77,7 @@
 	                                </div>
 	                            </div>
 	                            <div class="form-group">
-	                                <button class="btn btn-primary btn-block" type="submit">Done</button>
+	                                <button class="btn btn-primary btn-full-width" type="submit">Done</button>
 	                            </div>
 	                            <p>Already have an password?<a class="ms-2" href="{{ route('login') }}">Sign in</a></p>
 	                        </form>

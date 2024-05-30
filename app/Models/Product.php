@@ -20,7 +20,7 @@ class Product extends Model
      * @var array
      */
     protected $fillable = [
-        'uuid', 'name', 'description', 'price', 'image', 'category_uuid',
+        'id', 'name', 'description', 'price', 'image', 'category_id',
     ];
 
     /**
@@ -42,22 +42,12 @@ class Product extends Model
     /**
      * Boot method for the model.
      */
-    protected static function boot()
-    {
-        parent::boot();
-
-        static::creating(function ($model) {
-            if (empty($model->uuid)) {
-                $model->uuid = UuidHelper::generateUuid();
-            }
-        });
-    }
 
     /**
      * Get the category that owns the product.
      */
     public function category()
     {
-        return $this->belongsTo(Category::class, 'category_uuid', 'uuid');
+        return $this->belongsTo(Category::class, 'category_id', 'id');
     }
 }

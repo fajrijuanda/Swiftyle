@@ -19,27 +19,18 @@ class Category extends Model
      * @var array
      */
     protected $fillable = [
-        'uuid', 'name',
+        'id', 'name',
     ];
 
     /**
      * Boot method for the model.
      */
-    protected static function boot()
-    {
-        parent::boot();
-
-        static::creating(function ($model) {
-            if (empty($model->uuid)) {
-                $model->uuid = UuidHelper::generateUuid();
-            }
-        });
-    }
+    
     /**
      * Get the products for the category.
      */
     public function products()
     {
-        return $this->hasMany(Product::class, 'category_uuid', 'uuid');
+        return $this->hasMany(Product::class, 'category_uuid', 'id');
     }
 }

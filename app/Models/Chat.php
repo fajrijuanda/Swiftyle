@@ -14,29 +14,19 @@ class Chat extends Model
     public $incrementing = false;
 
     protected $fillable = [
-        'uuid',
-        'user1_uuid',
-        'user2_uuid',
+        'id',
+        'user1_id',
+        'user2_id',
     ];
 
     public function user1()
     {
-        return $this->belongsTo(User::class, 'user1_uuid', 'uuid');
+        return $this->belongsTo(User::class, 'user1_id', 'id');
     }
 
     public function user2()
     {
-        return $this->belongsTo(User::class, 'user2_uuid', 'uuid');
+        return $this->belongsTo(User::class, 'user2_id', 'id');
     }
 
-    protected static function boot()
-    {
-        parent::boot();
-
-        static::creating(function ($model) {
-            if (empty($model->uuid)) {
-                $model->uuid = UuidHelper::generateUuid();
-            }
-        });
-    }
 }

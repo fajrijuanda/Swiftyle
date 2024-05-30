@@ -11,27 +11,18 @@ class Shipping extends Model
     use HasFactory;
 
     protected $fillable = [
-        'uuid', 'order_uuid', 'address', 'city', 'state', 'postal_code', 'country',
+        'id', 'order_id', 'address', 'city', 'state', 'postal_code', 'country',
         'shipping_method', 'shipping_cost', 'status'
     ];
 
-    protected $primaryKey = 'uuid';
+    protected $primaryKey = 'id';
     public $incrementing = false;
     protected $keyType = 'string';
 
     public function order()
     {
-        return $this->belongsTo(Order::class, 'order_uuid', 'uuid');
+        return $this->belongsTo(Order::class, 'order_id', 'id');
     }
 
-    protected static function boot()
-    {
-        parent::boot();
-
-        static::creating(function ($model) {
-            if (empty($model->uuid)) {
-                $model->uuid = UuidHelper::generateUuid();
-            }
-        });
-    }
+    
 }

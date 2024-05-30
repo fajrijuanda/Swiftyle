@@ -11,31 +11,21 @@ class Review extends Model
     use HasFactory;
 
     protected $fillable = [
-        'uuid',
-        'user_uuid',
-        'product_uuid',
+        'id',
+        'user_id',
+        'product_id',
         'content',
         'rating',
     ];
 
-    protected static function boot()
-    {
-        parent::boot();
-
-        static::creating(function ($model) {
-            if (empty($model->uuid)) {
-                $model->uuid = UuidHelper::generateUuid();
-            }
-        });
-    }
 
     public function user()
     {
-        return $this->belongsTo(User::class, 'user_uuid', 'uuid');
+        return $this->belongsTo(User::class, 'user_id', 'id');
     }
 
     public function product()
     {
-        return $this->belongsTo(Product::class, 'product_uuid', 'uuid');
+        return $this->belongsTo(Product::class, 'product_id', 'id');
     }
 }

@@ -11,11 +11,12 @@
 @section('content')
     <section>
 	    <div class="container-fluid p-0">
+			<img class="bg-img-cover bg-center" src="{{ asset('assets/images/login/sign-up.png') }}" />
 	        <div class="row m-0">
 	            <div class="col-12 p-0">
 	                <div class="login-card">
 	                    <div class="login-main">
-	                        <form class="theme-form login-form">
+	                        <form class="theme-form login-form" style="border-radius: 20px">
 	                            <h4>Unlock</h4>
 	                            <div class="form-group">
 	                                <label class="col-form-label">Enter your Password</label>

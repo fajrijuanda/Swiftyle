@@ -18,28 +18,18 @@ class Cart extends Model
      * @var array
      */
     protected $fillable = [
-        'uuid', 'product_uuid', 'quantity', 'price', 'discount', 'total_discount', 'subtotal', 'total_price',
+        'id', 'product_id', 'quantity', 'price', 'discount', 'total_discount', 'subtotal', 'total_price',
     ];
 
     /**
      * Boot method for the model.
      */
-    protected static function boot()
-    {
-        parent::boot();
-
-        static::creating(function ($model) {
-            if (empty($model->uuid)) {
-                $model->uuid = UuidHelper::generateUuid();
-            }
-        });
-    }
 
     /**
      * Get the product that owns the cart item.
      */
     public function product()
     {
-        return $this->belongsTo(Product::class, 'product_uuid', 'uuid');
+        return $this->belongsTo(Product::class, 'product_id', 'id');
     }
 }

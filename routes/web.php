@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\SidebarController;
 use App\Http\Controllers\Web\OrdersController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Web\CartController;
@@ -19,11 +20,10 @@ use App\Http\Controllers\Web\WishlistController;
 | contains the "web" middleware group. Now create something great!
 |
 */
-
 @include_once('admin_web.php');
 
 Route::get('/', function () {
-    return redirect()->route('index');
+    return redirect()->route('login');
 })->name('/');
 
 Route::view('sample-page', 'admin.pages.sample-page')->name('sample-page');
@@ -37,6 +37,7 @@ Route::view('default-layout', 'multiple.default-layout')->name('default-layout')
 Route::view('compact-layout', 'multiple.compact-layout')->name('compact-layout');
 Route::view('modern-layout', 'multiple.modern-layout')->name('modern-layout');
 
+Route::post('/toggle-sidebar', [SidebarController::class, 'toggleSidebar'])->name('toggle-sidebar');
 
 
 
@@ -48,6 +49,7 @@ Route::post('logout', [AuthenticationController::class, 'logout'])->name('logout
 // Registration routes...
 Route::get('register', [AuthenticationController::class, 'showRegistrationForm'])->name('register');
 Route::post('register', [AuthenticationController::class, 'register']);
+
 
 Route::prefix('web')->group(function () {
     Route::group(['prefix' => 'users'], function () {

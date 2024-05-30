@@ -11,9 +11,9 @@ class UserPayment extends Model
 {
     use HasFactory;
 
-    protected $primaryKey = 'uuid';
+    protected $primaryKey = 'id';
     public $incrementing = false;
-    protected $keyType = 'uuid';
+    protected $keyType = 'id';
 
     protected $fillable = [
         'uuid',
@@ -22,19 +22,9 @@ class UserPayment extends Model
         'payment_details'
     ];
 
-    protected static function boot()
-    {
-        parent::boot();
-
-        static::creating(function ($model) {
-            if (empty($model->uuid)) {
-                $model->uuid = UuidHelper::generateUuid();
-            }
-        });
-    }
 
     public function user()
     {
-        return $this->belongsTo(User::class, 'user_uuid', 'uuid');
+        return $this->belongsTo(User::class, 'user_id', 'id');
     }
 }
