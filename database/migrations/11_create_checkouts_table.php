@@ -16,7 +16,7 @@ return new class extends Migration
         Schema::create('checkouts', function (Blueprint $table) {
             $table->id();
             $table->unsignedBigInteger('cart_id');
-            $table->foreign('cart_id')->references('id')->on('carts');
+            $table->foreign('cart_id')->references('id')->on('carts')->onDelete('cascade')->onUpdate('cascade');
             $table->string('payment_method', 255);
             $table->string('shipping_address', 255);
             $table->decimal('total_amount', 10, 2);

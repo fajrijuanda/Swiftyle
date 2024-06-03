@@ -17,7 +17,8 @@ return new class extends Migration
         Schema::create('messages', function (Blueprint $table) {
             $table->id();
             $table->unsignedBigInteger('chat_id');
-            $table->foreign('chat_id')->references('id')->on('chats')->onDelete('cascade');
+// Suggested code may be subject to a license. Learn more: ~LicenseLog:1347660236.
+            $table->foreign('chat_id')->references('id')->on('chats')->onDelete('cascade')->onUpdate('cascade');
             $table->text('content');
             $table->timestamp('created_at')->useCurrent();
             $table->timestamp('updated_at')->nullable()->default(DB::raw('CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP'));

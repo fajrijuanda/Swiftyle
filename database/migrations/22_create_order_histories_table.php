@@ -17,7 +17,7 @@ return new class extends Migration
         Schema::create('order_histories', function (Blueprint $table) {
             $table->id();
             $table->unsignedBigInteger('order_id');
-            $table->foreign('order_id')->references('id')->on('orders')->onDelete('cascade');
+            $table->foreign('order_id')->references('id')->on('orders')->onDelete('cascade')->onUpdate('cascade');
             $table->text('description')->nullable();
             $table->enum('status', ['done', 'cancelled', 'refunded']);
             $table->timestamp('created_at')->useCurrent();

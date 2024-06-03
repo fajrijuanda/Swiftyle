@@ -17,7 +17,9 @@ return new class extends Migration
         Schema::create('payments', function (Blueprint $table) {
             $table->id();
             $table->unsignedBigInteger('user_id');
-            $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
+// Suggested code may be subject to a license. Learn more: ~LicenseLog:4226883410.
+// Suggested code may be subject to a license. Learn more: ~LicenseLog:4088373959.
+            $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade')->onUpdate('cascade');
             $table->enum('payment_method', ['debit_card', 'credit_card', 'e_wallet', 'bank_transfer', 'paypal']);;
             $table->string('payment_details', 255)->nullable();
             $table->timestamp('created_at')->useCurrent();

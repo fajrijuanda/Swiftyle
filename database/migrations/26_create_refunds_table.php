@@ -17,7 +17,7 @@ return new class extends Migration
         Schema::create('refunds', function (Blueprint $table) {
             $table->id();
             $table->unsignedBigInteger('refund_request_id');
-            $table->foreign('refund_request_id')->references('id')->on('refund_requests')->onDelete('cascade');
+            $table->foreign('refund_request_id')->references('id')->on('refund_requests')->onDelete('cascade')->onUpdate('cascade');
             $table->decimal('amount', 10, 2); 
             $table->enum('status',['refunded']); 
             $table->text('reason')->nullable();

@@ -16,7 +16,7 @@ return new class extends Migration
         Schema::create('shipping', function (Blueprint $table) {
             $table->id();
             $table->unsignedBigInteger('checkout_id');
-            $table->foreign('checkout_id')->references('id')->on('checkouts')->onDelete('cascade');
+            $table->foreign('checkout_id')->references('id')->on('checkouts')->onDelete('cascade')->onUpdate('cascade');
             $table->string('shipping_address', 255);
             $table->string('tracking_number', 255);
             $table->date('shipped_date');
